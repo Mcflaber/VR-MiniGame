@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class Cutoff : MonoBehaviour
 {
-    Rigidbody rb;
+    public GameObject bodyPart;
+    public bool IsCut = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(IsCut == true)
+        {
+            Destroy(gameObject);
+            Instantiate(bodyPart, transform.position, transform.rotation);
+        }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        rb.useGravity = true;
-    }
+ 
 }

@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
     ThinkFuction think;
     public GameObject Player;
     public float WithinRange = 1f;
+    Rigidbody rb;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
