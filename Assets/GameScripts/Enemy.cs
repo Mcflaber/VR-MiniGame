@@ -1,8 +1,10 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static Enemy Instance;
     public delegate void ThinkFuction();
     public float WithinRange = 1f;
     public float moveSpeed;
@@ -11,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     Rigidbody rb;
     ThinkFuction think;
-    
+
     Vector3 moveDirection = Vector3.zero;
     
 
@@ -80,8 +82,13 @@ public class Enemy : MonoBehaviour
     }
     void Attack()
     {
-
+        
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 
 }
 
