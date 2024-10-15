@@ -5,6 +5,7 @@ public class Sword : MonoBehaviour
     public static Sword Instance;
     public int damageAmount;
     public bool isplayerSword;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
