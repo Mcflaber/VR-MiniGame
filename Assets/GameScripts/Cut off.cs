@@ -19,5 +19,8 @@ public class Cutoff : MonoBehaviour
             Instantiate(bodyPart, transform.position, transform.rotation);
         }
     }
- 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }

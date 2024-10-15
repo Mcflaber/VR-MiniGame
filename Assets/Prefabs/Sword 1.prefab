@@ -185,14 +185,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.09
-  m_Height: 1
+  m_Height: 0.8153931
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.59230345, z: 0}
 --- !u!114 &637717967137235922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28caeadda4eca34c8109fef72fe0b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 30
+  isplayerSword: 1
 --- !u!54 &34941557262862826
 Rigidbody:
   m_ObjectHideFlags: 0

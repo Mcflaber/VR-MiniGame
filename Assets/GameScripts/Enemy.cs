@@ -1,21 +1,23 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Enemy : MonoBehaviour
 {
     public static Enemy Instance;
     public delegate void ThinkFuction();
     public float WithinRange = 1f;
+    public float attackRange = 1f;
     public float moveSpeed;
     public GameObject CurrentTarget;
     public Boolean HasDynamicDirection = false;
-
+    public int currentHealth = 3;
     Rigidbody rb;
     ThinkFuction think;
 
     Vector3 moveDirection = Vector3.zero;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +28,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateChase();
+        if (IsClosetoTarget())
+        {
+            UpdateChase();
+        }
+
     }
 
 
@@ -45,7 +51,16 @@ public class Enemy : MonoBehaviour
         return result;
         // return (GetDistanceTo(currentTarget) > withinRange)
     }
-
+    public bool IsClosetoAttack()
+    {
+        bool result = false;
+        if (GetDistanceTo(CurrentTarget) < attackRange)
+        {
+            result = true;
+        }
+        return result;
+        // return (GetDistanceTo(currentTarget) > withinRange)
+    }
     public void UpdateMoveDirection()
     {
         Vector3 vectorB = CurrentTarget.transform.position;
@@ -66,15 +81,19 @@ public class Enemy : MonoBehaviour
             UpdateMoveDirection();
         }
 
-        Vector3 location = gameObject.transform.position;
-        location += moveDirection * moveSpeed * Time.deltaTime;
-        gameObject.transform.position = location;
-
-        if (IsClosetoTarget())
-        {  
-            UpdateMoveDirection();
-            Attack();
+        if (IsClosetoAttack())
+        {
+            think = Attack;
         }
+        else
+        {
+            Vector3 location = gameObject.transform.position;
+            location += moveDirection * moveSpeed * Time.deltaTime;
+            gameObject.transform.position = location;
+        }
+
+
+
     }
     void Block()
     {
@@ -82,13 +101,21 @@ public class Enemy : MonoBehaviour
     }
     void Attack()
     {
-        
+        Debug.Log("attack");
+
     }
-    private void OnTriggerEnter(Collider other)
+
+
+    public void TakeDamage(int damageAmount)
     {
-        
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+
+            currentHealth = 0;
+        }
+
     }
-
-
 }
 
