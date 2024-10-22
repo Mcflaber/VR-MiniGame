@@ -16,13 +16,15 @@ public class Enemy : MonoBehaviour
     Rigidbody rb;
     ThinkFuction think;
     public bool shouldAttack;
+    public bool isDead;
     Vector3 moveDirection = Vector3.zero;
-
+    public Animation attack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         think = UpdateChase;
+        
     }
 
     // Update is called once per frame
@@ -32,7 +34,10 @@ public class Enemy : MonoBehaviour
         {
             UpdateChase();
         }
-
+        if (isDead)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -83,7 +88,7 @@ public class Enemy : MonoBehaviour
 
         if (IsClosetoAttack())
         {
-            think = UpdateAttack;
+            Attack();
         }
         else
         {
@@ -98,14 +103,12 @@ public class Enemy : MonoBehaviour
 
 
     }
-    void Block()
-    {
-
-    }
-    void UpdateAttack()
+    
+    void Attack()
     {
         Debug.Log("attack");
-        shouldAttack = true;
+        
+        
     }
 
 
@@ -117,6 +120,8 @@ public class Enemy : MonoBehaviour
         {
 
             currentHealth = 0;
+            isDead = true;
+
         }
 
     }

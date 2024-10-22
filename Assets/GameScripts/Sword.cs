@@ -1,23 +1,34 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Sword : MonoBehaviour
 {
     public static Sword Instance;
     public int damageAmount;
     public bool isplayerSword;
-    public bool isBlocking;
-    public GameObject controller;
-    public double rotation;
+
+    public float rotation;
+ 
+    public float wait;
+
+    InputAction ThisAction;
+    public InputActionReference SomeAction;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      
+        ThisAction = InputSystem.actions.FindAction("XRI Left/rotation");
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotation = gameObject.transform.rotation.y;
+        Vector3 rot = ThisAction.ReadValue<Vector3>();
+
+        
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -26,10 +37,12 @@ public class Sword : MonoBehaviour
             Enemy bad = other.gameObject.GetComponentInParent<Enemy>();
             if (bad)
             {
-                if (isBlocking && rotation <= 180f)
-                {
+               
+                
                     Enemy.Instance.TakeDamage(damageAmount);
-                }
+                
+                
+
             }
         }
         else
@@ -37,6 +50,7 @@ public class Sword : MonoBehaviour
             Player Pc = other.gameObject.GetComponentInParent<Player>();
             if (Pc)
             {
+                
                 Player.Instance.TakeDamage(damageAmount);
 
 

@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance;
     public float currentHealth;
-    public float wait;
+   
     public bool isBlocking;
+
+    InputAction ThisAction;
+    public InputActionReference SomeAction;
 
     public void Awake()
     {
@@ -21,17 +25,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 pos = ThisAction.ReadValue<Vector3>();
     }
 
     public void TakeDamage(int damageAmount)
     {
-
-        wait -= Time.deltaTime;
-        if (wait == 0)
-        {
             currentHealth -= damageAmount;
-        }
+       
 
 
         if (currentHealth <= 0)

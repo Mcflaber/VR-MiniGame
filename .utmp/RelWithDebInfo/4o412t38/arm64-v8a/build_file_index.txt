@@ -1,0 +1,2 @@
+C:\working\Daniel Ramirez\VR-MiniGame\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\working\Daniel Ramirez\VR-MiniGame\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

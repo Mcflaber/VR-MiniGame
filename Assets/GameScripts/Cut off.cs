@@ -21,6 +21,10 @@ public class Cutoff : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
+        Sword sword = other.GetComponent<Sword>();
+        if (sword)
+        {
+            IsCut = true;
+        }
     }
 }
