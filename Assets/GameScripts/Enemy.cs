@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public int currentHealth = 3;
     Rigidbody rb;
     ThinkFuction think;
-
+    public bool shouldAttack;
     Vector3 moveDirection = Vector3.zero;
 
 
@@ -83,13 +83,16 @@ public class Enemy : MonoBehaviour
 
         if (IsClosetoAttack())
         {
-            think = Attack;
+            think = UpdateAttack;
         }
         else
         {
             Vector3 location = gameObject.transform.position;
             location += moveDirection * moveSpeed * Time.deltaTime;
             gameObject.transform.position = location;
+
+
+            shouldAttack = false;
         }
 
 
@@ -99,10 +102,10 @@ public class Enemy : MonoBehaviour
     {
 
     }
-    void Attack()
+    void UpdateAttack()
     {
         Debug.Log("attack");
-
+        shouldAttack = true;
     }
 
 
