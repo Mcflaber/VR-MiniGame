@@ -5,7 +5,9 @@ public class Sword : MonoBehaviour
     public static Sword Instance;
     public int damageAmount;
     public bool isplayerSword;
-    
+    public bool isBlocking;
+    public GameObject controller;
+    public double rotation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +17,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        rotation = gameObject.transform.rotation.y;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +26,10 @@ public class Sword : MonoBehaviour
             Enemy bad = other.gameObject.GetComponentInParent<Enemy>();
             if (bad)
             {
-                Enemy.Instance.TakeDamage(damageAmount);
+                if (isBlocking && rotation <= 180f)
+                {
+                    Enemy.Instance.TakeDamage(damageAmount);
+                }
             }
         }
         else
