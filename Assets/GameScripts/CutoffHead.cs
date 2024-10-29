@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class Cutoff : MonoBehaviour
+public class CutoffHead : MonoBehaviour
 {
     public GameObject bodyPart;
     public bool IsCut = false;
-    public GameObject head;
-   
+    public GameObject Enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -17,13 +16,12 @@ public class Cutoff : MonoBehaviour
     {
         if (IsCut == true)
         {
+           
             Destroy(gameObject);
             Instantiate(bodyPart, transform.position, transform.rotation);
+            Destroy(Enemy);
         }
-        if(head == null)
-        {
-            IsCut = true;
-        }
+
     }
     private void OnTriggerEnter(Collider other)
     {

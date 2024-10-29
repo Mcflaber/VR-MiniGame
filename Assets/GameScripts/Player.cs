@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
    
     public bool isBlocking;
 
-    InputAction ThisAction;
-    public InputActionReference SomeAction;
+   
     public quaternion pos;
     public TextMeshProUGUI HealthField;
     public void Awake()
@@ -28,7 +27,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = ThisAction.ReadValue<quaternion>();
+        
         
     }
 

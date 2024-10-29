@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         think = UpdateChase;
-        
+
     }
 
     // Update is called once per frame
@@ -35,10 +35,7 @@ public class Enemy : MonoBehaviour
         {
             UpdateChase();
         }
-        if (isDead == true)
-        {
-            Destroy(gameObject);
-        }
+
     }
 
 
@@ -107,32 +104,16 @@ public class Enemy : MonoBehaviour
     
     void Attack()
     {
-        Debug.Log("attack");
+        //Debug.Log("attack");
         
         
     }
 
 
-    public void TakeDamage(int damageAmount)
+
+    public void Die()
     {
-        currentHealth -= damageAmount;
-
-        if (currentHealth <= 0)
-        {
-
-            currentHealth = 0;
-            isDead = true;
-
-        }
-
-    }
-    public void Died()
-    {
-        isDead = true;
-    }
-    public void slower()
-    {
-        moveSpeed = moveSpeed / 2;
+        Destroy(gameObject);
     }
 }
 

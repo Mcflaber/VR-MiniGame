@@ -467,9 +467,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "first",
-                    "id": "afdcfbff-e241-4fdd-a6d1-23b0bf273360",
-                    "path": "<XRController>{LeftHand}/pointerRotation",
+                    "name": "First",
+                    "id": "ed03d944-4c09-4c38-8b68-5c844e18ca7c",
+                    "path": "<XRController>{LeftHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -478,9 +478,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "second",
-                    "id": "ed03d944-4c09-4c38-8b68-5c844e18ca7c",
-                    "path": "<XRController>{LeftHand}/deviceRotation",
+                    "name": "Second",
+                    "id": "afdcfbff-e241-4fdd-a6d1-23b0bf273360",
+                    "path": "<XRController>{LeftHand}/pointerRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

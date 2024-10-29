@@ -7,62 +7,48 @@ public class Sword : MonoBehaviour
 {
     public static Sword Instance;
     public int damageAmount;
-    public bool isplayerSword;
+    public bool isEnemySword;
 
-    public float buffer;
+
  
  
 
-    public XRController leftController;
 
-    InputAction ThisAction;
+
     public InputActionReference blocking;
     public Quaternion rotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ThisAction = InputSystem.actions.FindAction("XRI Left/rotation");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rotation = blocking.action.ReadValue<Quaternion>();
 
-
+        if(isEnemySword) { }
 
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (isplayerSword)
-        {
-            Enemy bad = other.gameObject.GetComponentInParent<Enemy>();
-            if (bad)
-            {
-               
-                
-                    Enemy.Instance.TakeDamage(damageAmount);
-                
-                
-
-            }
-        }
-        else
+        if (isEnemySword)
         {
             Player Pc = other.gameObject.GetComponentInParent<Player>();
             if (Pc)
             {
-                buffer--;
-                if(buffer <= 0)
+
+                if (rotation.y > 200)
                 {
                     Player.Instance.TakeDamage(damageAmount);
                 }
-               
-
-
-
+                else
+                {
+                    Debug.Log("blocked");
+                }
             }
         }
 

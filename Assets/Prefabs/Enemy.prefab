@@ -296,10 +296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 376553857217425263, guid: aeee84b95543eb940a7eec675674841d, type: 3}
   IsCut: 0
-  Head: 0
-  body: 0
-  Rleg: 0
-  Lleg: 0
 --- !u!1 &1245318345003947104
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,10 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 2352281163734294185, guid: 6d02ac4f6cf7ca948a4442037c1895fe, type: 3}
   IsCut: 0
-  Head: 0
-  body: 0
-  Rleg: 0
-  Lleg: 0
 --- !u!1 &1662976501164160877
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +635,7 @@ GameObject:
   - component: {fileID: 6199624004301167035}
   - component: {fileID: 4836818863602094396}
   - component: {fileID: 2491814316539375811}
-  - component: {fileID: 1298337201919184131}
+  - component: {fileID: 7487643609084650339}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -767,7 +759,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1298337201919184131
+--- !u!114 &7487643609084650339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -776,15 +768,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3700155031368097875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5306ca681b8893b4395251a830a5e9d6, type: 3}
+  m_Script: {fileID: 11500000, guid: ee1b701506912e147a74ae43b1313c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 8361655507014490730, guid: 91c17b03ec4e4844d832f441a7c26b85, type: 3}
   IsCut: 0
-  Head: 1
-  body: 0
-  Rleg: 0
-  Lleg: 0
 --- !u!1 &4524564342485678649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,10 +1034,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 6941636861800394153, guid: 3ae2cd9ed0a74d94ab5ef7bb71b80d20, type: 3}
   IsCut: 0
-  Head: 0
-  body: 0
-  Rleg: 0
-  Lleg: 1
 --- !u!1 &5254127779644870260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,10 +1267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 5467004278842789255, guid: 459cfcfb1f266634cb90b740ddb655eb, type: 3}
   IsCut: 0
-  Head: 0
-  body: 0
-  Rleg: 1
-  Lleg: 0
 --- !u!1 &6925869790515186889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1418,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 5300657007467475980, guid: 4de5a6da636ad0c489d75fd3392c1346, type: 3}
   IsCut: 0
-  Head: 0
-  body: 1
-  Rleg: 0
-  Lleg: 0
