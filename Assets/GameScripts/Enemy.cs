@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     public Animation attack;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
         {
             UpdateChase();
         }
-        if (isDead)
+        if (isDead == true)
         {
             Destroy(gameObject);
         }
@@ -124,6 +125,14 @@ public class Enemy : MonoBehaviour
 
         }
 
+    }
+    public void Died()
+    {
+        isDead = true;
+    }
+    public void slower()
+    {
+        moveSpeed = moveSpeed / 2;
     }
 }
 

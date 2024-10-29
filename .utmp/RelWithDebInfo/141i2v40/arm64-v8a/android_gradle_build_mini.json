@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "T:\\unity\\working\\VR-MiniGame\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "T:\\unity\\working\\VR-MiniGame\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\GameActivity\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "T:\\New folder\\6000.0.16f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "T:\\unity\\working\\VR-MiniGame\\.utmp\\RelWithDebInfo\\141i2v40\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "T:\\New folder\\6000.0.16f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "T:\\unity\\working\\VR-MiniGame\\.utmp\\RelWithDebInfo\\141i2v40\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@d02bb112ea9f9c2ed29f": {
+      "artifactName": "game",
+      "abi": "arm64-v8a",
+      "output": "T:\\unity\\working\\VR-MiniGame\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\141i2v40\\obj\\arm64-v8a\\libgame.so",
+      "runtimeFiles": []
+    }
+  }
+}

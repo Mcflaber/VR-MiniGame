@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.XR;
 
 public class Sword : MonoBehaviour
 {
@@ -7,13 +9,15 @@ public class Sword : MonoBehaviour
     public int damageAmount;
     public bool isplayerSword;
 
-    public float rotation;
+    public float buffer;
  
-    public float wait;
+ 
+
+    public XRController leftController;
 
     InputAction ThisAction;
-    public InputActionReference SomeAction;
-    
+    public InputActionReference blocking;
+    public Quaternion rotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,9 +28,9 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 rot = ThisAction.ReadValue<Vector3>();
-
         
+
+
 
 
     }
@@ -50,8 +54,12 @@ public class Sword : MonoBehaviour
             Player Pc = other.gameObject.GetComponentInParent<Player>();
             if (Pc)
             {
-                
-                Player.Instance.TakeDamage(damageAmount);
+                buffer--;
+                if(buffer <= 0)
+                {
+                    Player.Instance.TakeDamage(damageAmount);
+                }
+               
 
 
 

@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
 
     InputAction ThisAction;
     public InputActionReference SomeAction;
-
+    public quaternion pos;
     public void Awake()
     {
         Instance = this;
@@ -25,7 +26,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = ThisAction.ReadValue<Vector3>();
+        pos = ThisAction.ReadValue<quaternion>();
+        
     }
 
     public void TakeDamage(int damageAmount)
