@@ -17,11 +17,8 @@ public class Cutoff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsCut == true && Head == true || body == true)
-        {
-            Enemy.Instance.Died();
-        }
-        else if (IsCut == true)
+        
+        if (IsCut == true)
         {
             Destroy(gameObject);
             Instantiate(bodyPart, transform.position, transform.rotation);
@@ -33,8 +30,12 @@ public class Cutoff : MonoBehaviour
         if (sword)
         {
             IsCut = true;
-            
-            
+            if (Head == true || body == true)
+            {
+                Enemy.Instance.Died();
+                IsCut = true;
+            }
+
 
         }
     }
