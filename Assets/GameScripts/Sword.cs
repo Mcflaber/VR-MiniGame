@@ -28,7 +28,12 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotation = blocking.action.ReadValue<Quaternion>();
+        if (isEnemySword == false)
+        {
+            rotation = blocking.action.ReadValue<Quaternion>();
+        }
+
+        
 
 
 

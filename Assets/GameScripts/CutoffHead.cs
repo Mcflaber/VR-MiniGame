@@ -5,6 +5,7 @@ public class CutoffHead : MonoBehaviour
     public GameObject bodyPart;
     public bool IsCut = false;
     public GameObject Enemy;
+    public int Hp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,8 +29,12 @@ public class CutoffHead : MonoBehaviour
         Sword sword = other.GetComponent<Sword>();
         if (sword)
         {
+            Hp--;
+            if(Hp <= 0)
+            {
+                IsCut = true;
+            }
             
-            IsCut = true;
 
 
         }
