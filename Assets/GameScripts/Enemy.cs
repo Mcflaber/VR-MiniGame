@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public bool shouldAttack;
     public bool isDead;
     Vector3 moveDirection = Vector3.zero;
-    public Animator chaseAnim;
+    
     public Animator attack;
 
 
@@ -86,21 +86,19 @@ public class Enemy : MonoBehaviour
             UpdateMoveDirection();
         }
 
-        while (IsClosetoAttack())
+        if (IsClosetoAttack())
         {
             Attack();
         }
-        
-        
-            chaseAnim.SetTrigger("IsChasing");
-
+        else
+        {
             Vector3 location = gameObject.transform.position;
             location += moveDirection * moveSpeed * Time.deltaTime;
             gameObject.transform.position = location;
-            
+
 
             shouldAttack = false;
-        
+        }
 
 
 

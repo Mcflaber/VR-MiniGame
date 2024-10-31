@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UIElements;
 using UnityEngine.XR;
 
 public class Sword : MonoBehaviour
@@ -8,15 +9,15 @@ public class Sword : MonoBehaviour
     public static Sword Instance;
     public int damageAmount;
     public bool isEnemySword;
-
-
- 
- 
+    public float buffer = 1f;
 
 
 
     public InputActionReference blocking;
     public Quaternion rotation;
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,7 @@ public class Sword : MonoBehaviour
     {
         rotation = blocking.action.ReadValue<Quaternion>();
 
-      
+
 
 
     }
@@ -41,14 +42,26 @@ public class Sword : MonoBehaviour
             if (Pc)
             {
 
-                if (rotation.y > 200)
+                
+                if (rotation.y < 200)
                 {
-                    Player.Instance.TakeDamage(damageAmount);
+                    buffer -= Time.deltaTime;
+                    if (buffer < 0)
+                    {
+                        Player.Instance.TakeDamage(damageAmount);
+                        buffer = 1;
+                    }
                 }
                 else
                 {
                     Debug.Log("blocked");
                 }
+
+
+
+
+
+
             }
         }
 

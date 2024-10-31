@@ -8,12 +8,13 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     public float currentHealth;
-   
+
+
+    public InputActionReference blocking;
+    public Quaternion rotation;
+
     public bool isBlocking;
 
-   
-    public quaternion pos;
-    public TextMeshProUGUI HealthField;
     public void Awake()
     {
         Instance = this;
@@ -21,23 +22,38 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = 100;
-        HealthField.text = currentHealth.ToString() + "%";
+      
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+        rotation = blocking.action.ReadValue<Quaternion>();
+
+        if (rotation.z < 200.00)
+        {
+            isBlocking = false;
+        }
+        else
+        {
+            isBlocking = true;
+        }
     }
 
     public void TakeDamage(int damageAmount)
     {
             currentHealth -= damageAmount;
 
-        HealthField.text = currentHealth.ToString() + "%";
-
+        
+        if(isBlocking == true)
+        {
+            damageAmount = 0;
+        }
+        else
+        {
+            damageAmount = 10;
+        }
         if (currentHealth <= 0)
         {
 
