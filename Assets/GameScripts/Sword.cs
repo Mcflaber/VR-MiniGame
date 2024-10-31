@@ -48,7 +48,7 @@ public class Sword : MonoBehaviour
             {
 
                 
-                if (rotation.y < 200)
+                if (rotation.z < 200)
                 {
                     buffer -= Time.deltaTime;
                     if (buffer < 0)

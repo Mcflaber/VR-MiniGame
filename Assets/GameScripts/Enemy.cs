@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public bool isDead;
     Vector3 moveDirection = Vector3.zero;
     
-    public Animator attack;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour
     
     void Attack()
     {
-        attack.SetTrigger("Attack");
+
 
 
     }

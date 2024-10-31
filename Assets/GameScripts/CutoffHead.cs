@@ -3,6 +3,11 @@ using UnityEngine;
 public class CutoffHead : MonoBehaviour
 {
     public GameObject bodyPart;
+    public GameObject bodyPart2;
+    public GameObject bodyPart3;
+    public GameObject bodyPart4;
+    public GameObject bodyPart5;
+    public GameObject bodyPart6;
     public bool IsCut = false;
     public GameObject Enemy;
     public int Hp;
@@ -20,6 +25,11 @@ public class CutoffHead : MonoBehaviour
            
             Destroy(gameObject);
             Instantiate(bodyPart, transform.position, transform.rotation);
+            Instantiate(bodyPart2, transform.position, transform.rotation);
+            Instantiate(bodyPart3, transform.position, transform.rotation);
+            Instantiate(bodyPart4, transform.position, transform.rotation);
+            Instantiate(bodyPart5, transform.position, transform.rotation);
+            Instantiate(bodyPart6, transform.position, transform.rotation);
             Destroy(Enemy);
         }
 

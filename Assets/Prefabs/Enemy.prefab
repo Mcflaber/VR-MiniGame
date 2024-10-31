@@ -758,6 +758,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 8361655507014490730, guid: 91c17b03ec4e4844d832f441a7c26b85, type: 3}
+  bodyPart2: {fileID: 376553857217425263, guid: aeee84b95543eb940a7eec675674841d, type: 3}
+  bodyPart3: {fileID: 2352281163734294185, guid: 6d02ac4f6cf7ca948a4442037c1895fe, type: 3}
+  bodyPart4: {fileID: 5300657007467475980, guid: 4de5a6da636ad0c489d75fd3392c1346, type: 3}
+  bodyPart5: {fileID: 5467004278842789255, guid: 459cfcfb1f266634cb90b740ddb655eb, type: 3}
+  bodyPart6: {fileID: 6941636861800394153, guid: 3ae2cd9ed0a74d94ab5ef7bb71b80d20, type: 3}
   IsCut: 0
   Enemy: {fileID: 5254127779644870260}
   Hp: 0
@@ -1407,6 +1412,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 5300657007467475980, guid: 4de5a6da636ad0c489d75fd3392c1346, type: 3}
+  bodyPart2: {fileID: 8361655507014490730, guid: 91c17b03ec4e4844d832f441a7c26b85, type: 3}
+  bodyPart3: {fileID: 2352281163734294185, guid: 6d02ac4f6cf7ca948a4442037c1895fe, type: 3}
+  bodyPart4: {fileID: 376553857217425263, guid: aeee84b95543eb940a7eec675674841d, type: 3}
+  bodyPart5: {fileID: 5467004278842789255, guid: 459cfcfb1f266634cb90b740ddb655eb, type: 3}
+  bodyPart6: {fileID: 6941636861800394153, guid: 3ae2cd9ed0a74d94ab5ef7bb71b80d20, type: 3}
   IsCut: 0
   Enemy: {fileID: 5254127779644870260}
   Hp: 3

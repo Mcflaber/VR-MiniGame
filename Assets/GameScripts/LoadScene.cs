@@ -19,8 +19,16 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("BasicScene");
     }
+    public void LoadnextLevel()
+    {
+        SceneManager.LoadScene("BasicScene 1");
+    }
     public void Quit()
     {
         Debug.Log("Quit Applicaiton");
+    }
+    public void Escape()
+    {
+        SceneManager.LoadScene("Start");
     }
 }
