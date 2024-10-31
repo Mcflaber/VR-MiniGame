@@ -2,6 +2,7 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour
         {
 
             currentHealth = 0;
+            SceneManager.LoadScene("Death");
+            
 
         }
 

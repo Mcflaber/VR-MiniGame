@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     public bool shouldAttack;
     public bool isDead;
     Vector3 moveDirection = Vector3.zero;
-    public Animation attack;
+    public Animator chaseAnim;
+    public Animator attack;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,24 +80,27 @@ public class Enemy : MonoBehaviour
 
     void UpdateChase()
     {
+        
         if (HasDynamicDirection)
         {
             UpdateMoveDirection();
         }
 
-        if (IsClosetoAttack())
+        while (IsClosetoAttack())
         {
             Attack();
         }
-        else
-        {
+        
+        
+            chaseAnim.SetTrigger("IsChasing");
+
             Vector3 location = gameObject.transform.position;
             location += moveDirection * moveSpeed * Time.deltaTime;
             gameObject.transform.position = location;
-
+            
 
             shouldAttack = false;
-        }
+        
 
 
 
@@ -104,16 +108,13 @@ public class Enemy : MonoBehaviour
     
     void Attack()
     {
-        //Debug.Log("attack");
-        
-        
+        attack.SetTrigger("Attack");
+
+
     }
 
 
 
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+
 }
 

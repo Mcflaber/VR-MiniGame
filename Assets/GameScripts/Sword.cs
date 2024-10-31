@@ -29,7 +29,7 @@ public class Sword : MonoBehaviour
     {
         rotation = blocking.action.ReadValue<Quaternion>();
 
-        if(isEnemySword) { }
+      
 
 
     }
